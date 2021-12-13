@@ -9,9 +9,10 @@ console.log("ciao");
         
         if(document.getElementById("userMail").value == mailArray[i]){
            
+            window.alert("email valida ora puoi giocare!");
             document.getElementById('comparsa').style.display = "block";
             document.getElementById('scomparsa').style.display = "none";
-          
+            
             document.getElementById("tiraDadi").addEventListener('click',function(){ // al click gira i dadi e li mostra
                 let userDado = Math.floor(Math.random()*6)+1;
                 console.log(userDado);
@@ -29,8 +30,10 @@ console.log("ciao");
                     document.getElementById("vincitore").innerHTML = "hai perso";
                 }
             });
-        }
-    }
+        }else{
+            window.alert("email non valida riprova");
+        };
+    };
 
 
 });
