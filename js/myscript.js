@@ -1,14 +1,15 @@
 let mailArray= ['esempio@gmail.com','franco@yahoo.it','gianni@libero.it']; //creo l'array di mail che possano accedere          
 document.getElementById('comparsa').style.display = "none"; 
-let spia = false;
+let spia = false
+let sentinella = false
 document.getElementById("controlla").addEventListener('click',function(){ // al click eseguo i controlli e le operazione necessarie
             
     //controllo se nell'array è presente la mail inserita dall'utente
     for(let i = 0; i < mailArray.length; i++){ 
        
-        if(document.getElementById("userMail").value == mailArray[i]){  
+        if(document.getElementById("userMail").value == mailArray[i] && !sentinella){  
             spia = true; 
-            break;
+            sentinella = true;
         };
 
         
