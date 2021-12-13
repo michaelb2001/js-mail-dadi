@@ -4,12 +4,15 @@ document.getElementById('comparsa').style.display = "none";
 document.getElementById("controlla").addEventListener('click',function(){ // al click eseguo i controlli e le operazione necessarie
             
 console.log("ciao");
+let spia = false;
+
     //controllo se nell'array è presente la mail inserita dall'utente
     for(let i = 0; i < mailArray.length; i++){ 
         
         if(document.getElementById("userMail").value == mailArray[i]){
            
-            window.alert("email valida ora puoi giocare!");
+            
+            spia = true;
             document.getElementById('comparsa').style.display = "block";
             document.getElementById('scomparsa').style.display = "none";
             
@@ -30,14 +33,21 @@ console.log("ciao");
                     document.getElementById("vincitore").innerHTML = "hai perso";
                 }
             });
+            return 0;
         }else{
-            window.alert("email non valida riprova");
-        };
+            spia = false;
+        }
     };
 
 
 });
 
+
+if(spia){
+    window.alert("email valida ora puoi giocare!");
+}else{
+    window.alert("email non valida riprova");
+}
 
 
 
